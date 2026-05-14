@@ -3,170 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Developer Portfolio</title>
-
+  <title>Your Name | Frontend Developer</title>
   <style>
+    :root {
+      --bg: #0b0c10;
+      --text: #e6e6e6;
+      --accent: #58a6ff;
+      --gray: #8b949e;
+    }
+    
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0c10;
-      color: #e6e6e6;
-      line-height: 1.6;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
-
+    
     .wrap {
       max-width: 900px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 80px 20px 100px;
     }
-
+    
     header {
-      margin-bottom: 50px;
+      text-align: center;
+      margin-bottom: 60px;
     }
-
+    
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
+      margin: 0 0 10px 0;
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
       margin: 0;
     }
-
-    .subtitle {
-      opacity: 0.7;
-      margin-top: 8px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
+    
     h2 {
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 1px solid #2a2a2a;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
+      font-size: 1.35rem;
+      border-bottom: 2px solid #21262d;
+      padding-bottom: 10px;
+      margin: 50px 0 25px;
+      color: #fff;
     }
-
+    
+    .about p {
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+    
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .tag {
+      background: #161b22;
+      color: #c9d1d9;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      border: 1px solid #30363d;
+    }
+    
     .project {
+      background: #161b22;
+      padding: 24px;
+      border-radius: 8px;
       margin-bottom: 20px;
+      border: 1px solid #30363d;
     }
-
-    .project-title {
-      font-weight: bold;
+    
+    .project h3 {
+      margin: 0 0 8px 0;
+      color: var(--accent);
     }
-
+    
     .meta {
-      font-size: 0.9rem;
-      opacity: 0.7;
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
     }
-
-    a {
-      color: #7aa2ff;
+    
+    .links a {
+      color: var(--accent);
+      margin-right: 15px;
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
+    
+    .contact a {
+      color: var(--accent);
     }
-
-    ul {
-      padding-left: 18px;
-    }
-
-    .contact p {
-      margin: 5px 0;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #1a1c22;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      margin-right: 5px;
-      margin-top: 5px;
-      opacity: 0.9;
+    
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      .wrap { padding: 50px 15px; }
     }
   </style>
 </head>
-
 <body>
   <div class="wrap">
-
     <header>
       <h1>Your Name</h1>
-      <div class="subtitle">
-        Frontend Developer • Interactive Web Tools • Twitch Widgets
-      </div>
+      <p class="subtitle">Frontend Developer &amp; Interactive Web Engineer</p>
     </header>
 
-    <section>
+    <section class="about">
       <h2>About</h2>
       <p>
-        I build interactive web applications, Twitch overlays, and real-time widget systems.
-        My focus is on engaging UX, chat-driven interaction, and lightweight performant frontend systems.
+        I create engaging, high-performance web experiences with a focus on real-time interaction, 
+        clean code, and delightful user interfaces. Experienced in building Twitch tools, 
+        interactive widgets, and modern frontend applications.
       </p>
     </section>
 
     <section>
       <h2>Skills</h2>
-      <div>
-        <span class="tag">JavaScript</span>
-        <span class="tag">HTML/CSS</span>
+      <div class="skills">
+        <span class="tag">JavaScript (ES6+)</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">HTML5 / CSS3</span>
+        <span class="tag">React</span>
+        <span class="tag">GSAP Animation</span>
+        <span class="tag">REST &amp; WebSockets</span>
+        <span class="tag">Twitch API / EventSub</span>
         <span class="tag">PHP</span>
-        <span class="tag">GSAP</span>
-        <span class="tag">APIs</span>
-        <span class="tag">Twitch Extensions</span>
-        <span class="tag">EventSub</span>
+        <span class="tag">Git</span>
       </div>
     </section>
 
     <section>
-      <h2>Projects</h2>
-
+      <h2>Featured Projects</h2>
+      
       <div class="project">
-        <div class="project-title">Stream Fishing Widget</div>
-        <div class="meta">Twitch Interactive Overlay</div>
-        <p>
-          Real-time fishing game with rarity systems, animated catches, and chat-based interaction.
-          Includes persistence, reward logic, and StreamElements integration.
-        </p>
+        <h3>Stream Fishing Widget</h3>
+        <div class="meta">Twitch Interactive Overlay • 2024</div>
+        <p>Real-time fishing game featuring rarity systems, animated catches, chat commands, 
+           persistence via StreamElements, and reward redemption logic. Used by multiple partnered streamers.</p>
+        <div class="links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
 
       <div class="project">
-        <div class="project-title">Pokemon Guess Game</div>
-        <div class="meta">Full-stack API Game</div>
-        <p>
-          Chat-driven guessing game using Pokémon API with scoring, session tracking, and dynamic prompts.
-        </p>
+        <h3>Pokémon Guess Game</h3>
+        <div class="meta">Chat-Driven Game • Full Stack</div>
+        <p>Multiplayer guessing game using Pokémon API with scoring, streaks, dynamic difficulty, 
+           and real-time chat integration.</p>
+        <div class="links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
 
       <div class="project">
-        <div class="project-title">Hype Train Overlay System</div>
-        <div class="meta">Animated Twitch Extension</div>
-        <p>
-          GSAP-powered animated hype train with modular carts, timed transitions, and event-based triggers.
-        </p>
+        <h3>Hype Train Visual System</h3>
+        <div class="meta">Twitch Extension • GSAP Animation</div>
+        <p>High-performance animated hype train with modular carts, particle effects, 
+           and EventSub-driven real-time updates.</p>
+        <div class="links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
-
     </section>
 
     <section>
       <h2>Experience</h2>
-      <p>
-        <strong>Widget Developer (Independent)</strong><br/>
-        Built and sold interactive Twitch widgets and overlays used by streamers on Etsy and personal deployments.
-      </p>
+      <p><strong>Independent Widget Developer</strong> — 2023 to Present</p>
+      <p>Design, develop, and sell custom interactive Twitch overlays and extensions. 
+         Built and maintained solutions used by 50+ streamers.</p>
     </section>
 
     <section class="contact">
-      <h2>Contact</h2>
-      <p>Email: you@email.com</p>
-      <p>Portfolio: yourdomain.com</p>
-      <p>GitHub: github.com/yourname</p>
-      <p>Etsy: etsy.com/shop/yourshop</p>
+      <h2>Get In Touch</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:you@email.com">you@email.com</a><br>
+        <strong>GitHub:</strong> <a href="https://github.com/yourname" target="_blank">github.com/yourname</a><br>
+        <strong>LinkedIn:</strong> <a href="#" target="_blank">linkedin.com/in/yourname</a><br>
+        <strong>Portfolio:</strong> <a href="https://yourname.github.io">yourname.github.io</a>
+      </p>
     </section>
-
   </div>
 </body>
 </html>
