@@ -177,13 +177,7 @@
         background 0.22s ease,
         box-shadow 0.22s ease;
     }
-    
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(79,140,255,0.35);
-      background: var(--card-hover);
-      box-shadow: 0 10px 30px var(--shadow);
-    }
+  
     
     /* THUMBNAILS */
     
@@ -336,102 +330,103 @@
       </div>
     </section>
 
-<!-- FEATURED PROJECTS -->
-<div class="section-title">Featured Projects</div>
-
-  <section class="grid featured-grid">
-  
-    <!-- POKÉMON GUESS -->
-    <div class="card project-card">
-      <div class="thumb">
-        <img src="https://via.placeholder.com/600x300" alt="Pokémon Guess Widget" />
+    <!-- FEATURED PROJECTS -->
+    <div class="section-title">Featured Projects</div>
+    
+    <section class="grid featured-grid">
+    
+      <!-- POKÉMON GUESS -->
+      <div class="card project-card">
+        <div class="thumb">
+          <img src="https://via.placeholder.com/600x300" alt="Pokémon Guess Widget" />
+        </div>
+    
+        <div class="project-content">
+          <div class="project-title">Pokémon Guess Game</div>
+    
+          <div class="project-desc">
+            A real-time interactive guessing game built for stream integration. 
+            Viewers attempt to identify Pokémon through live chat. Includes UI customization, animated reveals, event-driven state updates, and user data storage.
+          </div>
+    
+          <div class="tech">
+            HTML • CSS • JavaScript • GSAP • StreamElements • PokéAPI
+          </div>
+    
+          <div class="card-actions">
+            <a class="btn primary" href="https://jleips2600.github.io/pokemon-guess/" target="_blank">
+              ▶ Live Demo
+            </a>
+    
+            <a class="btn" href="https://github.com/jleips2600/pokemon-guess" target="_blank">
+              Code
+            </a>
+          </div>
+        </div>
       </div>
-  
-      <div class="project-title">Pokémon Guess Game</div>
-      <div class="project-desc">
-        A real-time interactive guessing game built for stream integration. 
-        Viewers attempt to identify Pokémon through live chat. Includes UI customization, animated reveals, event-driven state updates, and user data storage.
+    
+      <!-- MEGATHON TIMER -->
+      <div class="card project-card">
+        <div class="thumb">
+          <img src="https://via.placeholder.com/600x300" alt="Megathon Timer" />
+        </div>
+    
+        <div class="project-content">
+          <div class="project-title">Megathon Timer</div>
+    
+          <div class="project-desc">
+            A live stream integrated timer built for 'subathons' and similar events. Includes customizable display, chat control, event handling, and user/timer data storage.
+          </div>
+    
+          <div class="tech">
+            HTML • CSS • JavaScript • StreamElements
+          </div>
+    
+          <div class="card-actions">
+            <a class="btn primary" href="https://jleips2600.github.io/megathon-timer" target="_blank">
+              ▶ Live Demo
+            </a>
+    
+            <a class="btn" href="https://github.com/jleips2600/megathon-timer" target="_blank">
+              Code
+            </a>
+          </div>
+        </div>
       </div>
-  
-      <div class="tech">
-        HTML • CSS • JavaScript • GSAP • StreamElements • PokéAPI
+    
+      <!-- CRANE GAME -->
+      <div class="card project-card">
+        <div class="thumb">
+          <img src="https://via.placeholder.com/600x300" alt="Crane Game Widget" />
+        </div>
+    
+        <div class="project-content">
+          <div class="project-title">Crane Game Overlay</div>
+    
+          <div class="project-desc">
+            Interactive claw machine game integrated with live stream events. Includes customizable display options, a weighted randomization system, and sequenced CSS animations.
+          </div>
+    
+          <div class="tech">
+            HTML • CSS • JavaScript • StreamElements
+          </div>
+    
+          <div class="card-actions">
+            <a class="btn primary" href="https://jleips2600.github.io/crane-game" target="_blank">
+              ▶ Live Demo
+            </a>
+    
+            <a class="btn" href="https://github.com/jleips2600/crane-game" target="_blank">
+              Code
+            </a>
+          </div>
+        </div>
       </div>
-  
-      <div class="card-actions">
-        <a class="btn primary" href="https://jleips2600.github.io/pokemon-guess/" target="_blank">▶ Live Demo</a>
-        <a class="btn" href="https://github.com/jleips2600/pokemon-guess" target="_blank">Code</a>
-      </div>
-    </div>
-  
-    <!-- MEGATHON TIMER -->
-    <div class="card project-card">
-      <div class="thumb">
-        <img src="https://via.placeholder.com/600x300" alt="Megathon Timer" />
-      </div>
-  
-      <div class="project-title">Megathon Timer</div>
-      <div class="project-desc">
-        A live stream integrated timer built for 'subathons' and similar events. Includes customizable display, chat control, event handling, and user/timer data storage.
-      </div>
-  
-      <div class="tech">
-        HTML • CSS • JavaScript • StreamElements 
-      </div>
-  
-      <div class="card-actions">
-        <a class="btn primary" href="https://jleips2600.github.io/megathon-timer" target="_blank">▶ Live Demo</a>
-        <a class="btn" href="https://github.com/jleips2600/megathon-timer" target="_blank">Code</a>
-      </div>
-    </div>
-  
-    <!-- CRANE GAME -->
-    <div class="card project-card">
-      <div class="thumb">
-        <img src="https://via.placeholder.com/600x300" alt="Crane Game Widget" />
-      </div>
-  
-      <div class="project-title">Crane Game Overlay</div>
-      <div class="project-desc">
-        Interactive claw machine game integrated with live stream events. Includes customizable display options, a weighted randomization system, and sequenced CSS animations.
-      </div>
-  
-      <div class="tech">
-        HTML • CSS • JavaScript • StreamElements
-      </div>
-  
-      <div class="card-actions">
-        <a class="btn primary" href="https://jleips2600.github.io/crane-game" target="_blank">▶ Live Demo</a>
-        <a class="btn" href="https://github.com/jleips2600/crane-game" target="_blank">Code</a>
-      </div>
-    </div>
-  
-  </section>
-
-    <!-- OTHER PROJECTS -->
-    <div class="section-title">Other Work</div>
-
-    <section class="grid">
-
-      <div class="small-card">
-        <h4>Stream Fishing Widget</h4>
-        <p>Interactive Twitch fishing game with rarity systems and animated catch events.</p>
-      </div>
-
-      <div class="small-card">
-        <h4>Hype Train Animation System</h4>
-        <p>GSAP-based animated train system with dynamic entry/exit behaviors.</p>
-      </div>
-
-      <div class="small-card">
-        <h4>Event-Based Overlay Tools</h4>
-        <p>StreamElements widgets using modular event-driven architecture.</p>
-      </div>
-
+    
     </section>
-
     <!-- FOOTER -->
     <footer>
-      Built by Jacob Leiphart
+      
     </footer>
 
   </div>
