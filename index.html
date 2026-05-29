@@ -31,11 +31,10 @@
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
     
-    /* subtle background glow */
     body::before {
       content: "";
       position: fixed;
@@ -60,27 +59,28 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 70px 22px;
+      padding: 40px 22px 30px;
     }
     
     /* HERO */
     
     .hero {
-      margin-bottom: 70px;
+      margin-bottom: 35px;
     }
     
     .name {
-      font-size: clamp(42px, 7vw, 64px);
+      font-size: clamp(38px, 6vw, 56px);
       font-weight: 800;
       letter-spacing: -2px;
-      margin-bottom: 12px;
+      line-height: 1;
+      margin-bottom: 6px;
     }
     
     .tagline {
       color: var(--muted);
-      font-size: 20px;
+      font-size: 18px;
       max-width: 650px;
-      margin-bottom: 28px;
+      margin-bottom: 18px;
     }
     
     .links {
@@ -97,7 +97,7 @@
       justify-content: center;
       gap: 8px;
     
-      padding: 11px 16px;
+      padding: 10px 14px;
     
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -135,26 +135,26 @@
     /* SECTION TITLES */
     
     .section-title {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--muted);
     
-      margin: 50px 0 18px;
+      margin: 18px 0 12px;
     }
     
     /* GRID */
     
     .grid {
       display: grid;
-      gap: 18px;
+      gap: 14px;
     }
     
     /* FEATURED PROJECT GRID */
     
     .featured-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     
     /* FEATURED CARDS */
@@ -177,13 +177,19 @@
         background 0.22s ease,
         box-shadow 0.22s ease;
     }
-  
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(79,140,255,0.35);
+      background: var(--card-hover);
+      box-shadow: 0 10px 30px var(--shadow);
+    }
     
     /* THUMBNAILS */
     
     .thumb {
       width: 100%;
-      height: 180px;
+      height: 145px;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
       background: #0b0d12;
@@ -204,7 +210,7 @@
     /* CARD CONTENT */
     
     .project-content {
-      padding: 22px;
+      padding: 18px;
     
       display: flex;
       flex-direction: column;
@@ -212,24 +218,25 @@
     }
     
     .project-title {
-      font-size: 23px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     
     .project-desc {
       color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 14px;
       flex: 1;
     }
     
     .tech {
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 12px;
+      line-height: 1.4;
       color: #7f8ea3;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
     
     /* CARD ACTIONS */
@@ -278,13 +285,13 @@
     /* FOOTER */
     
     footer {
-      margin-top: 80px;
-      padding-top: 30px;
+      margin-top: 28px;
+      padding-top: 18px;
     
       border-top: 1px solid var(--border);
     
       text-align: center;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
     }
     
@@ -292,7 +299,11 @@
     
     @media (max-width: 700px) {
       .container {
-        padding: 50px 16px;
+        padding: 30px 16px 24px;
+      }
+    
+      .featured-grid {
+        grid-template-columns: 1fr;
       }
     
       .thumb {
@@ -300,15 +311,23 @@
       }
     
       .project-content {
-        padding: 18px;
+        padding: 16px;
       }
     
       .project-title {
-        font-size: 20px;
+        font-size: 18px;
       }
     
       .tagline {
-        font-size: 18px;
+        font-size: 16px;
+      }
+    
+      .btn {
+        width: 100%;
+      }
+    
+      .card-actions {
+        flex-direction: column;
       }
     }
   </style>
