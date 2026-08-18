@@ -4,340 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jacob Leiphart Portfolio</title>
-
-  <style>
-    :root {
-      --bg: #0f1115;
-      --card: #171a21;
-      --card-hover: #1d212b;
-      --text: #e6e6e6;
-      --muted: #9aa4b2;
-      --accent: #4f8cff;
-      --border: rgba(255,255,255,0.08);
-      --shadow: rgba(0,0,0,0.25);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(79,140,255,0.12), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(79,140,255,0.08), transparent 30%);
-      pointer-events: none;
-      z-index: -1;
-    }
-    
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    
-    img {
-      display: block;
-      max-width: 100%;
-    }
-    
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 22px 30px;
-    }
-    
-    /* HERO */
-    
-    .hero {
-      margin-bottom: 35px;
-    }
-    
-    .name {
-      font-size: clamp(38px, 6vw, 56px);
-      font-weight: 800;
-      letter-spacing: -2px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    
-    .tagline {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 650px;
-      margin-bottom: 18px;
-    }
-
-    .about {
-      max-width: 700px;
-      line-height: 1.6;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    .links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    
-    /* BUTTONS */
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    
-      padding: 10px 14px;
-    
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    
-      background: transparent;
-      color: var(--text);
-    
-      font-size: 14px;
-      font-weight: 500;
-    
-      transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        color 0.2s ease;
-    }
-    
-    .btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-    
-    .primary {
-      background: var(--accent);
-      border-color: transparent;
-      color: white;
-    }
-    
-    .primary:hover {
-      background: #3d7df5;
-      color: white;
-    }
-    
-    /* SECTION TITLES */
-    
-    .section-title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-    
-      margin: 18px 0 12px;
-    }
-    
-    /* GRID */
-    
-    .grid {
-      display: grid;
-      gap: 14px;
-    }
-    
-    /* FEATURED PROJECT GRID */
-    
-    .featured-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    
-    /* FEATURED CARDS */
-    
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-    }
-    
-    .project-card {
-      overflow: hidden;
-    
-      display: flex;
-      flex-direction: column;
-    
-      transition:
-        transform 0.22s ease,
-        border-color 0.22s ease,
-        background 0.22s ease,
-        box-shadow 0.22s ease;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(79,140,255,0.35);
-      background: var(--card-hover);
-      box-shadow: 0 10px 30px var(--shadow);
-    }
-    
-    /* THUMBNAILS */
-    
-    .thumb {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-      background: #0b0d12;
-    }
-    
-    .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    
-      transition: transform 0.35s ease;
-    }
-    
-    .project-card:hover .thumb img {
-      transform: scale(1.04);
-    }
-    
-    /* CARD CONTENT */
-    
-    .project-content {
-      padding: 18px;
-    
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    
-    .project-title {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-    
-    .project-desc {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-      margin-bottom: 14px;
-      flex: 1;
-    }
-    
-    .tech {
-      font-size: 12px;
-      line-height: 1.4;
-      color: #7f8ea3;
-      margin-bottom: 14px;
-    }
-    
-    /* CARD ACTIONS */
-    
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    /* SMALL CARDS */
-    
-    .other-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    
-    .small-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-    
-      padding: 18px;
-    
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
-    }
-    
-    .small-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(79,140,255,0.25);
-      background: var(--card-hover);
-    }
-    
-    .small-card h4 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-    
-    .small-card p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-    
-    /* FOOTER */
-    
-    footer {
-      margin-top: 28px;
-      padding-top: 18px;
-    
-      border-top: 1px solid var(--border);
-    
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    
-    /* MOBILE */
-    
-    @media (max-width: 700px) {
-      .container {
-        padding: 30px 16px 24px;
-      }
-    
-      .featured-grid {
-        grid-template-columns: 1fr;
-      }
-    
-      .thumb {
-        height: 170px;
-      }
-    
-      .project-content {
-        padding: 16px;
-      }
-    
-      .project-title {
-        font-size: 18px;
-      }
-    
-      .tagline {
-        font-size: 16px;
-      }
-    
-      .btn {
-        width: 100%;
-      }
-    
-      .card-actions {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -350,9 +17,8 @@
         Creative Technologist
       </div>
       <div class="about">
-        I’m a frontend developer focused on building clean, interactive web experiences. A lot of my work has been in custom web apps and real-time systems, but I like working across different frontend projects where UI, performance, and user experience really matter.
+        I'm a web developer and digital creative focused on building engaging, user-friendly digital experiences. My work spans responsive websites, Shopify storefronts, custom web applications, and interactive digital products, with an emphasis on thoughtful design, usability, and practical solutions.
       </div>
-
       <div class="links">
         <a class="btn" href="https://github.com/jleips2600" target="_blank">GitHub</a>
         <a class="btn" href="mailto:jleips2600@gmail.com">Contact</a>
@@ -361,16 +27,175 @@
 
     <div class="section-title">Work History</div>
 
-    <section>
-      <h2>Business Owner / Full-Stack Web Developer</h2>
-      <h3>2022 - Present</h3>
-      <ul>
+    <section class="work-history">
+
+      <h2>Business Owner / Web Application Developer</h2>
+      <p class="work-history_dates">2023 - Present</p>
+
+      <ul class="work-history_responsibilities">
         <li>Designed, developed, deployed, and maintained custom web-based products and interactive tools.</li>
+        <li>Developed front-end interfaces and integrated APIs and third-party services.</li>
+        <li>Created and managed digital graphics and visual assets used throughout products.</li>
+        <li>Provided direct customer support, troubleshooting, and technical assistance while incorporating feedback into product improvements.</li>
+        <li>Managed product listings, documentation, updates, and day-to-day business operations.</li>
       </ul>
+
+
+      <h2>Freelance Web Developer / Front-End Developer</h2>
+      <p class="work-history_dates">2020 - Present</p>
+
+      <ul class="work-history_responsibilities">
+        <li>Developed custom web applications and interactive interfaces for clients.</li>
+        <li>Built responsive websites and custom features using HTML, CSS, JavaScript, and related technologies.</li>
+        <li>Developed and customized Shopify storefronts and themes using Liquid, CSS, and JavaScript.</li>
+        <li>Integrated APIs and third-party services into custom web applications.</li>
+        <li>Worked directly with clients to define requirements, troubleshoot issues, and manage projects from concept through deployment and revisions.</li>
+      </ul>
+
+
+      <h2>Freelance Digital Artist / Video Editor</h2>
+      <p class="work-history_dates">2016 - Present</p>
+
+      <ul class="work-history_responsibilities">
+        <li>Created custom digital artwork, emotes, graphics, logos, and visual assets for content creators and livestreamers.</li>
+        <li>Designed visual assets based on client branding, requirements, and creative direction.</li>
+        <li>Produced and edited video content for online creators and digital platforms.</li>
+        <li>Worked directly with clients to develop concepts, incorporate feedback, and deliver projects on schedule.</li>
+      </ul>
+
+
+      <h2>Web Developer / Graphic Designer — Glacierland Resource Conservation & Development</h2>
+      <p class="work-history_dates">Volunteer | 2024 - Present</p>
+
+      <ul class="work-history_responsibilities">
+        <li>Improved and modernized the organization's existing website, enhancing its usability, presentation, and functionality.</li>
+        <li>Designed and implemented CMS functionality for job postings, articles, events, and staff profiles.</li>
+        <li>Developed systems that allow staff to manage and update website content without developer assistance.</li>
+        <li>Created digital content and graphics to support organizational communications and outreach.</li>
+        <li>Worked directly with organizational stakeholders to identify needs and implement practical web solutions.</li>
+      </ul>
+
+    </section>
+
+    <div class="section-title">Skills</div>
+
+    <section class="skills">
+
+      <div class="skills_group">
+        <h3>Web Development</h3>
+        <ul>
+          <li>HTML / CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Shopify / Liquid</li>
+          <li>Responsive Web Design</li>
+          <li>REST APIs</li>
+          <li>CMS Development</li>
+        </ul>
+      </div>
+
+      <div class="skills_group">
+        <h3>Design & Creative</h3>
+        <ul>
+          <li>Graphic Design</li>
+          <li>Digital Illustration</li>
+          <li>UI / UX Design</li>
+          <li>Image Editing</li>
+          <li>Animation</li>
+          <li>Video Editing</li>
+        </ul>
+      </div>
+
+      <div class="skills_group">
+        <h3>Tools & Platforms</h3>
+        <ul>
+          <li>Git / GitHub</li>
+          <li>VS Code</li>
+          <li>Vite</li>
+          <li>GSAP</li>
+          <li>StreamElements</li>
+        </ul>
+      </div>
+
+      <div class="skills_group">
+        <h3>Professional</h3>
+        <ul>
+          <li>Client Communication</li>
+          <li>Customer Support</li>
+          <li>Project Management</li>
+          <li>Technical Troubleshooting</li>
+          <li>Digital Product Development</li>
+          <li>Ecommerce</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <div class="section-title">Featured Websites</div>
+
+    <section class="grid featured-grid">
+
+      <!-- MEADOWLARK MERCANTILE -->
+      <div class="card project-card">
+        <div class="thumb">
+          <img src="meadowlarkThumb.png" alt="Meadowlark Mercantile website" />
+        </div>
+
+        <div class="project-content">
+          <div class="project-title">Meadowlark Mercantile</div>
+
+          <div class="project-desc">
+            A custom Shopify storefront concept exploring branded ecommerce,
+            product presentation, responsive design, and custom theme sections.
+          </div>
+
+          <div class="tech">
+            Shopify • Liquid • HTML • CSS • JavaScript
+          </div>
+
+          <div class="card-actions">
+            <a class="btn primary" href="https://meadowlark-mercantile-x24rfgqw.myshopify.com/" target="_blank">
+              ▶ Live Demo
+            </a>
+          </div>
+          <div class="demo-password">
+            Demo password: <code>meadowlark</code>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- GLACIERLAND -->
+      <div class="card project-card">
+        <div class="thumb">
+          <img src="glacierlandThumb.png" alt="Glacierland RC&D website" />
+        </div>
+
+        <div class="project-content">
+          <div class="project-title">Glacierland RC&D</div>
+
+          <div class="project-desc">
+            Website development and modernization for a nonprofit organization,
+            including custom CMS functionality for job postings, articles,
+            events, and staff profiles.
+          </div>
+
+          <div class="tech">
+            HTML • CSS • JavaScript • CMS
+          </div>
+
+          <div class="card-actions">
+            <a class="btn primary" href="https://www.glacierlandrcd.org/" target="_blank">
+              ▶ Visit Site
+            </a>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- FEATURED PROJECTS -->
-    <div class="section-title">Featured Projects</div>
+    <div class="section-title">Featured Widgets</div>
     
     <section class="grid featured-grid">
     
@@ -463,11 +288,35 @@
       </div>
     
     </section>
+
+    <div class="section-title">Art & Design</div>
+
+    <section id="artwork">
+
+      <div class="artwork-category">
+        <h3>Illustrations</h3>
+        <div id="illustrations-gallery" class="artwork-grid"></div>
+      </div>
+
+      <div class="artwork-category">
+        <h3>Animations</h3>
+        <div id="animations-gallery" class="artwork-grid"></div>
+      </div>
+
+      <div class="artwork-category">
+        <h3>Design</h3>
+        <div id="design-gallery" class="artwork-grid"></div>
+      </div>
+    </section>
+
+
     <!-- FOOTER -->
     <footer>
       
     </footer>
 
   </div>
+
+  <script src="artwork.js"></script>
 </body>
 </html>

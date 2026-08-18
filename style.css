@@ -1,0 +1,391 @@
+:root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --card-hover: #1d212b;
+    --text: #e6e6e6;
+    --muted: #9aa4b2;
+    --accent: #4f8cff;
+    --border: rgba(255,255,255,0.08);
+    --shadow: rgba(0,0,0,0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at top left, rgba(79,140,255,0.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(79,140,255,0.08), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 22px 30px;
+}
+
+/* HERO */
+
+.hero {
+    margin-bottom: 35px;
+}
+
+.name {
+    font-size: clamp(38px, 6vw, 56px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.tagline {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 650px;
+    margin-bottom: 18px;
+}
+
+.about {
+    max-width: 700px;
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: var(--accent);
+    border-color: transparent;
+    color: white;
+}
+
+.primary:hover {
+    background: #3d7df5;
+    color: white;
+}
+
+/* SECTION TITLES */
+
+.section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+
+    margin: 18px 0 12px;
+}
+
+/* GRID */
+
+.grid {
+    display: grid;
+    gap: 14px;
+}
+
+/* FEATURED PROJECT GRID */
+
+.featured-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* FEATURED CARDS */
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79,140,255,0.35);
+    background: var(--card-hover);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* THUMBNAILS */
+
+.thumb {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: #0b0d12;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .thumb img {
+    transform: scale(1.04);
+}
+
+/* CARD CONTENT */
+
+.project-content {
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.project-desc {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    flex: 1;
+}
+
+.tech {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #7f8ea3;
+    margin-bottom: 14px;
+}
+
+/* CARD ACTIONS */
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* SMALL CARDS */
+
+.other-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.small-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    padding: 18px;
+
+    transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.small-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(79,140,255,0.25);
+    background: var(--card-hover);
+}
+
+.small-card h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.small-card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+section
+{
+    margin: 40px;
+}
+
+.work-history_dates {
+    font-style: italic;
+}
+
+.work-history_responsibilities {
+    margin: 20px;
+}
+
+.skills {
+  margin-top: 3rem;
+}
+
+.skills_group {
+  margin-bottom: 2rem;
+}
+
+.skills_group h3 {
+  margin-bottom: 0.75rem;
+}
+
+.skills_group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skills_group li {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.artwork-category {
+    margin: 20px 0;
+}
+
+.artwork-grid {
+    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.artwork-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 28px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .container {
+    padding: 30px 16px 24px;
+    }
+
+    .featured-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .thumb {
+    height: 170px;
+    }
+
+    .project-content {
+    padding: 16px;
+    }
+
+    .project-title {
+    font-size: 18px;
+    }
+
+    .tagline {
+    font-size: 16px;
+    }
+
+    .btn {
+    width: 100%;
+    }
+
+    .card-actions {
+    flex-direction: column;
+    }
+}
